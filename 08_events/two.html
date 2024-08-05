@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //--------setTimeout(handler,time)
+    // handler - function , callback function, maybe written somewhere else use it as reference ,no need to call
+    // time - milliseconds ex- 2000ms 
+    // run single time and after the given time period 
+    const sayVishal = function(){
+         console.log("Vishal");
+    }
+    const changetext = function(){ document.querySelector('h1').innerHTML = "Best JS Series"
+    }
+
+    //setTimeout(sayVishal,2000)
+    //setTimeout(changetext,2000)
+
+    // setTimeout(function(){
+    //     console.log("Vishal");
+    // },2000)
+
+    const changeMe =  setTimeout(changetext,2000)
+
+    //------clearTimeOut ------
+    // use to remove timeout and it required reference
+    
+    // clearTimeout(changeMe) // no benefits of using in this way , instead use on event 
+    
+    //-------- another way
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED")
+    })
+
+</script>
+</html>

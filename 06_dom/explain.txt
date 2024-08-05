@@ -1,0 +1,75 @@
+shift lines of code right or left in Visual Studio Code: -
+
+            # Shift right: Select the lines, press Tab, then Edit > Shift Right
+
+           # Shift left: Select the lines to shift, press Shift+Tab, then Edit > Shift Left
+ 
+
+
++++++++++++++++++ DOM +++++++++++++++++++
+
+Dom manipulation is use the make changes on web pages and "DOM" stand for Document object model 
+    
+# class - behind the scence Document object model treat as a className, that why in console the class access by 
+ .className  
+
+# .getElementById('id name') - it is use to access the id in html file, and you have to mention the id name 
+
+        document.getElementById('first-heading').innerHTML = "<h2>Hello guys</h2>"
+            
+        it will change the heading of web page instead of what you write on html page.
+
+# .getAttribute("name of attribute") - use to access the attribute , and you have to mention the name of attribute
+
+# .setAttribute("name of attribute" , "name you want to set in that attribute")  - use to set the attribute and it always override the attribute, so if want set attribute with previous attribute then use ( space ) to prevent this things 
+
+# .style.anyproperty = "value"  - use to style that specific part
+
+        for example :- 
+        title.style.backgroundColor = "green"
+        title.style.borderRadius = "15px"  
+
+--------------- how to add content ------------
+
+# .innerText - only visible content diplay
+
+# .innerContent - display all content including that which is unvisible due to some diplay none properties
+
+# .innerHTML - include html tag if you mention it , show whole inner html 
+ for example :-
+ 'DOM learning on Chai aur Code <span style="display: none;">test text</span>'
+ 
+
+---------- selecting technique ----------
+# .getElementByClassName("name of class") - use to selecting the class and it give you HTMl collection
+    for example:-
+    HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+
+    // to convert it into array use 
+    Array.from(tempClassList)
+    then it converted into array
+
+       const myConvertedArray = Array.from(tempClassList)
+       myConvertedArray.forEach((li)=>{
+       li.style.color = "orange"
+})
+
+# document.querySelector('any selecting thing') - you can select class (.) , id(#) , tag , input[type = " text // password ,..."]// it give you the first and single element 
+
+   for example:-
+   document.querySelector('input[type="password"]')
+   <input type=​"password" name id>​
+
+It is use to select individual element
+
+# document.querySelectorAll(" ") - It is use to select the entire  same type element
+// its output - NodeList(num of items) [itms]
+    for example:-
+    NodeList(3) [li,li,li]
+
+    // Looks like an array but not an array, instead there are many properties which similar as array
+
+  if selecting individual items from querySelectorAll then use
+
+  name[index].anyproperty = "value"    
+

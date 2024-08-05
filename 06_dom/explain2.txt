@@ -1,0 +1,2 @@
+# className.children -  give you HTML collections // almost like an array property 
+

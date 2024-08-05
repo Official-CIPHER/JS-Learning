@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code aur fun | DOM</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+        <ul class="language">
+                <li>Javascript</li>
+        </ul>
+    
+</body>
+<script>
+    // ------ function to add language name ---------
+    function addLanguage(langName){
+            const li = document.createElement('li')
+            li.innerHTML = `${langName}`// it traverse the whole element everytime when you call, so not much optimize way 
+            document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguage('Python')  
+    addLanguage('Typescript')
+
+    // more optimize way of adding 
+
+    // createTextNode( whatever you want to add ) - use to add text in the node
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").append(li)
+    }
+
+    addOptiLanguage('golang')
+
+    // -------- edit -------------
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // 1st way
+    // secondLang.innerHTMl = "Mojo"
+    const newli = document.createElement("li")
+    newli.textContent = "Mojo"
+    // 2nd way
+    secondLang.replaceWith(newli) // use to replace by reference 
+
+    const firstLang = document.querySelector("li:first-child")
+    // 3rd way
+    firstLang.outerHTML = "<li>Typescript</li>" // in this you will have to write whole structure of html
+
+    // ------------ remove -----------------
+
+    const lastLang = document.querySelector("li:nth-child(4)")
+    lastLang.remove() // use to remove element 
+
+</script>
+</html>
