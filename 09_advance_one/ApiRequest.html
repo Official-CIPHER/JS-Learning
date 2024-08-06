@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API </title>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .show{
+            background-color: #fff;
+            color: #212121;
+        }
+        img{
+            height: 200px;
+            width: 200px;
+            mix-blend-mode:multiply;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121;">
+    <div class="container">
+        <button class="show">
+            SHOW CARD
+        </button>
+    </div>
+
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/Official-CIPHER'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl) // open has been not call and its not call by itself
+    // console.log(xhr.readyState); // 1 
+    xhr.onreadystatechange = function () {
+        // console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText) // JSON conversion and parse is use to convert string into JSON data
+            // console.log(data);
+            // console.log(typeof data);
+
+            // console.log(data.followers)
+            const show = document.querySelector('.show')
+            show.addEventListener('click', function () {
+                show.innerHTML = `<img src="${data.avatar_url}">
+                <br/>
+                <h3>User Name : ${data.name}</h3>
+                <br/>
+                <h3>User Location : ${data.location}</h3>`
+            })
+        }
+
+    }
+    xhr.send() // now actually it sended
+
+</script>
+
+</html>
