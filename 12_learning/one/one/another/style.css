@@ -15,9 +15,15 @@ html, body{
 body{
     font-family:"Ubuntu", sans-serif;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: cornsilk;
+}
+
+h1{
+    font-size: 50px;
+    margin: 10px 0;
 }
 
 #card {
