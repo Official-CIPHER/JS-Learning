@@ -55,14 +55,14 @@ console.log("A " , myArr);
 
 const myn1 = myArr.slice(1,3);
 // slice give the array which includes starting index value to value before ending index
-// slice doesn't manupulate the original array
+// slice doesn't manipulate the original array
 
 console.log(myn1);
 console.log("B ", myArr);
 
 const myn2 = myArr.splice(1,3);
 // splice give the array which includes starting index value to ending index value 
-//splice do manupulation with the original array
+//splice do manupilation with the original array
 
 console.log("C ", myArr);
 console.log(myn2);
